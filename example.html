@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box}
+
+/* Set height of body and the document to 100% */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial;
+}
+
+/* Style tab links */
+.tablink {
+  background-color: #17202A;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 25%;
+}
+
+.tablink:hover {
+  background-color: #777;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+  color: white;
+  display: none;
+  padding: 45px 20px;
+  height: auto;
+}
+
+#Synopsis {background-color: #566573;}
+#Trailer {background-color: #566573;}
+#Stars {background-color: #566573;}
+#Download {background-color: #566573;}
+</style>
+</head>
+<body>
+
+<button class="tablink" onclick="openPage('Synopsis', this, '#566573')" id="defaultOpen">Synopsis</button>
+<button class="tablink" onclick="openPage('Trailer', this, '#566573')">Trailer</button>
+<button class="tablink" onclick="openPage('Stars', this, '#566573')">Stars</button>
+<button class="tablink" onclick="openPage('Download', this, '#566573')">Download</button>
+
+<div id="Synopsis" class="tabcontent">
+  <h3>Synopsis</h3>
+  <p>Isi Synopsis Isi Synopsis Isi Synopsis Isi Synopsis Isi Synopsis Isi Synopsis Isi Synopsis Isi Synopsis Isi Synopsis Isi Synopsis Isi Synopsis Isi Synopsis Isi Synopsis Isi Synopsis Isi Synopsis</p>
+</div>
+
+<div id="Trailer" class="tabcontent">
+  <h3>Trailer</h3>
+  <iframe height="300px" width="100%" src="https://www.youtube.com/embed/PT8lRUKfCxg" name="iframe_a" style="border:none" allowfullscreen></iframe>
+</div>
+
+<div id="Stars" class="tabcontent">
+  <h3>Stars</h3>
+  <p>name people, name people, name people, name people, name people, name people, name people, name people, name people, name people, name people, name people, name people, name people, name people, name people,name people, name people, name people, name people, name people, name people, name people, name people</p>
+</div>
+
+<div id="Download" class="tabcontent">
+  <h3>Download</h3>
+  <p>Who we are and what we do.</p>
+</div>
+
+<script>
+function openPage(pageName,elmnt,color) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+  document.getElementById(pageName).style.display = "block";
+  elmnt.style.backgroundColor = color;
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+   
+</body>
+</html> 
