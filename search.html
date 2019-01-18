@@ -2,142 +2,77 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-* {box-sizing: border-box}
-
-/* Set height of body and the document to 100% */
 body, html {
   background-color: #17202A;
   height: 100%;
   margin: 0;
   font-family: Arial;
 }
-
-/* Style tab links */
-.tablink {
-  background-color: #17202A;
-  color: white;
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  font-size: 17px;
-  width: 25%;
-}
-
-.tablink:hover {
-  background-color: #777;
-}
-
-/* Style the tab content (and add height:100% for full page content) */
-.tabcontent {
-  color: white;
-  display: none;
-  padding: 45px 20px;
-  height: auto;
-}
-
-#Synopsis {background-color: #566573;}
-#Trailer {background-color: #566573;}
-#Stars {background-color: #566573;}
-#Download {background-color: #566573;}
-</style>
-
-<style>
-body {
-  font-family: Arial;
-}
-
 * {
   box-sizing: border-box;
-}
-
-form.example input[type=text] {
-  padding: 10px;
-  font-size: 17px;
-  border: 1px solid grey;
-  float: left;
-  width: 80%;
-  background: #f1f1f1;
-}
-
-form.example button {
-  float: left;
-  width: 20%;
-  padding: 10px;
-  background: #2196F3;
+  background-color: #17202A;
   color: white;
-  font-size: 17px;
-  border: 1px solid grey;
-  border-left: none;
-  cursor: pointer;
 }
-
-form.example button:hover {
-  background: #0b7dda;
+#myInput {
+  background-image: url('https://3.bp.blogspot.com/-S4U-ReBGqnc/XEE0zCP37WI/AAAAAAAAANI/MsksQUhs-kM5p0COVhwFkDfhLb4ThJjDACLcBGAs/s1600/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #566573;
+  margin-bottom: 12px;
 }
-
-form.example::after {
-  content: "";
-  clear: both;
-  display: table;
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+#myUL li a {
+  border: 1px solid #566573;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #17202A;
+  padding: 4px;
+  text-decoration: none;
+  font-size: 12px;
+  color: white;
+  display: block
+}
+#myUL li a:hover:not(.header) {
+  background-color: #566573;
 }
 </style>
-
 </head>
 <body>
-<form class="example" action="/action_page.php">
-  <input type="text" placeholder="Search.." name="search">
-  <button type="submit"><i class="fa fa-search"></i></button>
-</form>
-<iframe height="315px" width="100%" src="https://drive.google.com/file/d/1rZ7A8nm8WHtdcl81OZf-8Ks0GqyeQrIk/preview" style="border:none" allowfullscreen></iframe>
 
-<button class="tablink" onclick="openPage('Synopsis', this, '#566573')" id="defaultOpen">Synopsis</button>
-<button class="tablink" onclick="openPage('Trailer', this, '#566573')">Trailer</button>
-<button class="tablink" onclick="openPage('Stars', this, '#566573')">Stars</button>
-<button class="tablink" onclick="openPage('Download', this, '#566573')">Download</button>
-
-<div id="Synopsis" class="tabcontent">
-  <h3>Synopsis</h3>
-  <p>Isi Synopsis Isi Synopsis Isi Synopsis Isi Synopsis Isi Synopsis Isi Synopsis Isi Synopsis Isi Synopsis Isi Synopsis Isi Synopsis Isi Synopsis Isi Synopsis Isi Synopsis Isi Synopsis Isi Synopsis</p>
-</div>
-
-<div id="Trailer" class="tabcontent">
-  <h3>Trailer</h3>
-  <iframe height="315px" width="100%" src="https://www.youtube.com/embed/PT8lRUKfCxg" style="border:none" allowfullscreen></iframe>
-</div>
-
-<div id="Stars" class="tabcontent">
-  <h3>Stars</h3>
-  <p>name people, name people, name people, name people, name people, name people, name people, name people, name people, name people, name people, name people, name people, name people, name people, name people,name people, name people, name people, name people, name people, name people, name people, name people</p>
-</div>
-
-<div id="Download" class="tabcontent">
-  <h3>Download</h3>
-  <p>Name Server Hosting - Kualitas Video - Ukuran File - Link Download</p>
-  <p>Name Server Hosting - Kualitas Video - Ukuran File - Link Download</p>
-  <p>Name Server Hosting - Kualitas Video - Ukuran File - Link Download</p>
-</div>
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Cari anime atau category.." title="Type in a title">
+<ul id="myUL">
+  <li><a href="#">Suspiria (2018) - Action, Sci-fi, School</a></li>
+  <li><a href="#">The Kid Who Would Be King (2019) - Action, Sci-fi, School</a></li>
+  <li><a href="#">Die Unsichtbaren (2017) - Action, Sci-fi, School</a></li>
+  <li><a href="#">The Final Wish (2018) - Action, Sci-fi, School</a></li>
+  <li><a href="#">In Like Flynn (2018) - Action, Sci-fi, School</a></li>
+  <li><a href="#">Jihadists (2016) - Sci-fi, School</a></li>
+</ul>
 
 <script>
-function openPage(pageName,elmnt,color) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablink");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].style.backgroundColor = "";
-  }
-  document.getElementById(pageName).style.display = "block";
-  elmnt.style.backgroundColor = color;
-}
+function myFunction() {
+    var input, filter, ul, li, a, i;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
 
-// Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();
+        }
+    }
+}
 </script>
    
 </body>
