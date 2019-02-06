@@ -3,55 +3,58 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
-<style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+  <style>
   /* Make the image fully responsive */
   .carousel-inner img {
     width: 100%;
     height: 100%;
   }
-</style>
-<style>
-body, html {
+  body, html {
   background-color: #17202A;
-  height: 100%;
-  margin: 0;
+  height:100%;
   font-family: Arial;
-}
+  color: white;
+  }
+  </style>
+<style>
 * {
   box-sizing: border-box;
-  background-color: #17202A;
-  color: white;
 }
+
 #myInput {
-  background-image: url('https://3.bp.blogspot.com/-S4U-ReBGqnc/XEE0zCP37WI/AAAAAAAAANI/MsksQUhs-kM5p0COVhwFkDfhLb4ThJjDACLcBGAs/s1600/searchicon.png');
+  background-color: #17202A;
   background-position: 10px 12px;
   background-repeat: no-repeat;
   width: 100%;
   font-size: 16px;
-  padding: 12px 20px 12px 40px;
+  padding: 12px 20px 12px 20px;
   border: 1px solid #566573;
   margin-bottom: 12px;
+  color: white;
 }
+
 #myUL {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
+
 #myUL li a {
   border: 1px solid #566573;
   margin-top: -1px; /* Prevent double borders */
   background-color: #17202A;
   padding: 4px;
   text-decoration: none;
-  font-size: 12px;
+  font-size: 16px;
   color: white;
-  display: block;
+  display: block
 }
+
 #myUL li a:hover:not(.header) {
-  background-color: #566573;
+  background-color: #17202A;
 }
 </style>
 </head>
@@ -87,17 +90,57 @@ body, html {
   </a>
 </div>
 </div>
-<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Cari anime atau category.." title="Type in a anime atau category">
+<br>
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for titles and genres..">
+
 <ul id="myUL">
-  <li><a href="https://raw.githack.com/cakfadillagi/movie/master/Episode.html">Ansatsu Kyoushitsu S2 (2016) - Action, Comedy, School, Shounen</a></li>
-  <li><a href="#">The Kid Who Would Be King (2019) - Action, Sci-fi, School</a></li>
-  <li><a href="#">Die Unsichtbaren (2017) - Action, Sci-fi, School</a></li>
-  <li><a href="#">The Final Wish (2018) - Action, Sci-fi, School</a></li>
-  <li><a href="#">In Like Flynn (2018) - Action, Sci-fi</a></li>
-  <li><a href="#">Jihadists (2016) - Sci-fi, School</a></li>
-  <li><a href="#">A</a></li>
+  <li><a href="#">Judul</a></li>
+  <li><a href="#">Judul</a></li>
+  <li><a href="#">Judul</a></li>
+  <li><a href="#">Bagus</a></li>
+  <li><a href="#">Regol</a></li>
+  <li><a href="#">Judul</a></li>
+  <li><a href="#">Judul</a></li>
+  <li><a href="#">Judul</a></li>
+  <li><a href="#">Judul</a></li>
+  <li><a href="#">Judul</a></li>
+  <li><a href="#">Judul</a></li>
+  <li><a href="#">Judul</a></li>
+  <li><a href="#">Judul</a></li>
+  <li><a href="#">Judul</a></li>
+  <li><a href="#">Judul</a></li>
+  <li><a href="#">Judul</a></li>
+  <li><a href="#">Judul</a></li>
+  <li><a href="#">Judul</a></li>
+  <li><a href="#">Judul</a></li>
+  <li><a href="#">Judul</a></li>
+  <li><a href="#">Judul</a></li>
+  <li><a href="#">Judul</a></li>
+  <li><a href="#">Judul</a></li>
+  <li><a href="#">Judul</a></li>
+  <li><a href="#">Judul</a></li>
+  <li><a href="#">Judul</a></li>
 </ul>
-</ul>
+
+<script>
+function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+</script>
 
 <script>
 $(document).ready(function(){
@@ -124,25 +167,6 @@ $(document).ready(function(){
   });
 });
 </script>
-  
-<script>
-function myFunction() {
-    var input, filter, ul, li, a, i;
-    input = document.getElementById("myInput");
-    filter = input.value.toUpperCase();
-    ul = document.getElementById("myUL");
-    li = ul.getElementsByTagName("li");
-    for (i = 0; i < li.length; i++) {
-        a = li[i].getElementsByTagName("a")[0];
-        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = "";
-        } else {
-            li[i].style.display = "none";
 
-        }
-    }
-}
-</script>
-   
 </body>
-</html> 
+</html>
